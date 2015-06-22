@@ -1,0 +1,289 @@
+.tabbed-area {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  .tabbed-area .tab-content {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 33px); }
+    .tabbed-area .tab-content .tab-pane {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+      clear: both;
+      padding: 10px 5px;
+      width: 100%;
+      height: 100%; }
+    .tabbed-area .tab-content .tab-pane.active {
+      visibility: visible; }
+  .tabbed-area .tabs {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 33px;
+    background: -webkit-linear-gradient(left, #000000 0%, #757575 100%);
+    background: linear-gradient(to right, #000000 0%, #757575 100%); }
+    .tabbed-area .tabs .tab {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      margin-right: 2px;
+      margin-left: 2px;
+      padding: 0 7px 0px 7px;
+      cursor: pointer;
+      top: 1px;
+      font-weight: bold;
+      opacity: 0.7;
+      overflow: hidden;
+      white-space: nowrap;
+      color: white;
+      background: #38878e; }
+      .tabbed-area .tabs .tab .title {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        vertical-align: middle;
+        line-height: 33px; }
+    .tabbed-area .tabs .tab.active {
+      top: 0;
+      opacity: inherit; }
+    .tabbed-area .tabs .tab.inactive:hover {
+      opacity: 0.9; }
+    .tabbed-area .tabs .tab.inactive .action {
+      display: none; }
+
+.icon {
+  position: relative;
+  vertical-align: middle;
+  font-size: 22px;
+  margin: 5px;
+  color: white; }
+
+.icon.close {
+  opacity: .3; }
+
+.popups {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.popup {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  border: 1px solid #6e6e6e;
+  box-shadow: 4px 4px 20px 2px rgba(0, 0, 0, 0.25);
+  background: white;
+  z-index: 2; }
+  .popup .popup-drag {
+    position: absolute;
+    height: 33px;
+    width: calc(100% - 30px);
+    top: 0;
+    left: 0;
+    cursor: move;
+    z-index: 3; }
+  .popup .popup-header {
+    overflow: hidden;
+    white-space: nowrap;
+    height: 33px;
+    cursor: move;
+    font-size: 10pt;
+    font-weight: bold;
+    color: white;
+    background: -webkit-linear-gradient(left, #000000 0%, #757575 100%);
+    background: linear-gradient(to right, #000000 0%, #757575 100%);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 3; }
+    .popup .popup-header .title {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      vertical-align: middle;
+      line-height: 33px; }
+  .popup .popup-body {
+    position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+
+.modal {
+  display: none;
+  overflow: hidden;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 9999;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  outline: 0;
+  background: rgba(0, 0, 0, 0.7); }
+  .modal .popup {
+    position: static; }
+
+.modal.visible {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.react-resizable {
+  position: relative; }
+
+.react-resizable-handle.react-draggable {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pg08IS0tIEdlbmVyYXRvcjogQWRvYmUgRmlyZXdvcmtzIENTNiwgRXhwb3J0IFNWRyBFeHRlbnNpb24gYnkgQWFyb24gQmVhbGwgKGh0dHA6Ly9maXJld29ya3MuYWJlYWxsLmNvbSkgLiBWZXJzaW9uOiAwLjYuMSAgLS0+DTwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DTxzdmcgaWQ9IlVudGl0bGVkLVBhZ2UlMjAxIiB2aWV3Qm94PSIwIDAgNiA2IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjojZmZmZmZmMDAiIHZlcnNpb249IjEuMSINCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQl4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjZweCIgaGVpZ2h0PSI2cHgiDT4NCTxnIG9wYWNpdHk9IjAuMzAyIj4NCQk8cGF0aCBkPSJNIDYgNiBMIDAgNiBMIDAgNC4yIEwgNCA0LjIgTCA0LjIgNC4yIEwgNC4yIDAgTCA2IDAgTCA2IDYgTCA2IDYgWiIgZmlsbD0iIzAwMDAwMCIvPg0JPC9nPg08L3N2Zz4=");
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+  /* Since this handle is absolutely positioned, we don't want the
+     draggable transforms to actually move it */
+  transform: none !important;
+  -webkit-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+  -moz-transform: none !important;
+  z-index: 99; }
+
+.loading-container {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+          transition: visibility 0s linear 0.5s, opacity 0.5s linear; }
+  .loading-container div {
+    opacity: 0.5;
+    height: 50%;
+    width: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; }
+  .loading-container .spinner {
+    background-image: url(../images/panoptes-logo.png);
+    -webkit-animation: fa-spin 2s infinite linear;
+            animation: fa-spin 2s infinite linear; }
+  .loading-container .error {
+    background-image: url(../images/error.svg); }
+
+.loading-container.show {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s; }
+
+.top-bar {
+  height: 33px;
+  background: #38878e;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2; }
+  .top-bar .btn {
+    border: none;
+    background: transparent;
+    color: white; }
+  .top-bar .text {
+    vertical-align: middle;
+    line-height: 33px;
+    color: white;
+    margin-left: 7px;
+    margin-right: 7px; }
+
+.datatable {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+.sidebar {
+  width: 248px;
+  padding: 12px 9px; }
+
+.sidebar-header {
+  line-height: normal; }
+  .sidebar-header .icon-holder {
+    border-radius: 9px;
+    border: 2px solid #63c9cd;
+    padding: 5px 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
+    background-color: #e6f4f5; }
+    .sidebar-header .icon-holder .icon {
+      font-size: 30px;
+      color: #38878e; }
+
+.vertical-stack {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%; }
+  .vertical-stack div.grow {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+
+.pointer {
+  cursor: pointer; }

@@ -1,0 +1,29 @@
+@import url(./cover.css);
+body {
+  height: 100%;
+  background-image: url("../images/lp2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top right;
+  background-size: 350px;
+  font-family: 'Bernhard', serif; }
+
+@font-face {
+  font-family: 'Bernhard';
+  src: url("../fonts/bernhard-modern.woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Typo';
+  src: url("../fonts/TypoUprightBTRegular.woff");
+  font-weight: normal;
+  font-style: normal; }
+
+.masthead-brand {
+  font-family: 'Typo', serif;
+  font-size: 40px; }
+
+@media (min-width: 1024px) {
+  body {
+    background-image: url("../images/lp.jpg"); } }

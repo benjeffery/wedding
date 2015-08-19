@@ -44,3 +44,9 @@ body {
 .well {
   text-shadow: none;
   background-color: rgba(245, 245, 245, 0.8); }
+
+.cols {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
